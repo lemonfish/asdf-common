@@ -36,37 +36,37 @@ public abstract class 기본처리기<P extends Model, M extends StatefullModel>
 	@Override
 	@RequestMapping("목록")
 	public @ResponseBody Map<String, Object> 목록(@RequestBody P 검색조건) {
-		return ok(commonService.listSimple(검색조건, this.모델클래스));
+		return ok(공통서비스.listSimple(검색조건, this.모델클래스));
 	}
 
 	@Override
 	@RequestMapping("조회")
 	public @ResponseBody Map<String, Object> 조회(@RequestBody P 검색조건) {
-		return ok(commonService.oneSimple(검색조건, this.모델클래스));
+		return ok(공통서비스.oneSimple(검색조건, this.모델클래스));
 	}
 
 	@Override
 	@RequestMapping("/신규")
 	public @ResponseBody Map<String, Object> 신규(@RequestBody M 신규데이터) {
-		return ok(commonService.insertSimple(신규데이터));
+		return ok(공통서비스.insertSimple(신규데이터));
 	}
 
 	@Override
 	@RequestMapping("/수정")
 	public @ResponseBody Map<String, Object> 수정(@RequestBody M 수정된데이터) {
-		return ok(commonService.updateSimple(수정된데이터));
+		return ok(공통서비스.updateSimple(수정된데이터));
 	}
 
 	@Override
 	@RequestMapping("/삭제")
 	public @ResponseBody Map<String, Object> 삭제(@RequestBody M 삭제된데이터) {
-		return ok(commonService.updateSimple(삭제된데이터));
+		return ok(공통서비스.updateSimple(삭제된데이터));
 	}
 
 	@Override
 	@RequestMapping("/저장")
 	public @ResponseBody Map<String, Object> 저장(@RequestBody List<M> 저장할데이터목록, boolean useAndGet) {
-		return ok(commonService.saveModel(클래스요청매핑, 저장할데이터목록, useAndGet));
+		return ok(공통서비스.saveModel(클래스요청매핑, 저장할데이터목록, useAndGet));
 	}
 
 	protected String get클래스요청매핑() {

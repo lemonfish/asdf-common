@@ -18,8 +18,9 @@ import net.asdf.core.util.Objectz;
 
 @Service
 public class 공통코드서비스 {
+
 	@Resource
-	private CommonDao commonDao;
+	private CommonDao 공통데이터접근기;
 
 	@Resource
 	private Map<String, String> 모델코드맵;
@@ -47,6 +48,6 @@ public class 공통코드서비스 {
 			}
 		}
 
-		return commonDao.list("공통코드.조회", $코드검색조건, 공통코드.class);
+		return 공통데이터접근기.list("공통코드.조회", $코드검색조건, 공통코드.class);
 	}
 }
